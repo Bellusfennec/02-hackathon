@@ -21,10 +21,15 @@ const Progress = ({ percent, name, type, size, color, colorFill, duration }) => 
   }
   const renderProgress = () => {
     if (type === "circle") {
+      const sizes = {
+          sm: "w-16 h-16 text-sm",
+          md: "w-28 h-28 text-base",
+          lg: "w-40 h-40 text-xl"
+      }
       progressAnimation();
       return (
         <div
-          className="bg-gray-300 rounded-full overflow-hidden relative flex items-center justify-center"
+          className={"bg-gray-300 rounded-full overflow-hidden relative flex items-center justify-center " + sizes[size]}
           style={{
             width: `${size}px`,
             height: `${size}px`
@@ -38,26 +43,21 @@ const Progress = ({ percent, name, type, size, color, colorFill, duration }) => 
                }}></div>
           <span
             ref={progressText}
-            className="absolute text-xl"
-            style={{
-              background: "#FFFFFF",
-              width: `${size - 20}px`,
-              height: `${size - 20}px`,
-              borderRadius: "100%",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center"
-            }}
+            className="absolute rounded-full flex justify-center items-center w-[70%] h-[70%] bg-white"
           >{percent + "%"}</span>
         </div>
       );
     }
+    const sizes = {
+        sm: "h-6 text-xs rounded",
+        md: "h-8 text-sm rounded-md",
+        lg: "h-10 text-base rounded-lg"
+    }
     progressAnimation();
     return (
       <div
-        className="w-full relative flex items-center justify-center"
+        className={"w-full relative flex items-center justify-center overflow-hidden " + sizes[size]}
         style={{
-          height: `${size}px`,
           background: color
         }}
       >
@@ -71,7 +71,7 @@ const Progress = ({ percent, name, type, size, color, colorFill, duration }) => 
         ></div>
         <span
           ref={progressText}
-          className="absolute text-xl">{percent + "%"}</span>
+          className="absolute">{percent + "%"}</span>
       </div>
     );
   }
@@ -85,7 +85,7 @@ const Progress = ({ percent, name, type, size, color, colorFill, duration }) => 
 
 Progress.defaultProps = {
   type: "bar",
-  size: 40,
+  size: "lg",
   color: "#FDF1C1",
   colorFill: "#FFC602FF",
   duration: 0
@@ -95,7 +95,7 @@ Progress.propTypes = {
   percent: PropTypes.oneOf(Array.from(Array(101).keys())),
   name: PropTypes.string.isRequired,
   type: PropTypes.oneOf(["bar", "circle"]),
-  size: PropTypes.number,
+  size: PropTypes.oneOf(["sm", "md", "lg"]),
   color: PropTypes.string,
   colorFill: PropTypes.string,
   duration: PropTypes.number
