@@ -5,11 +5,12 @@ import H1 from "../common/components/text/h1";
 const HomePage = () => {
   return (
     <MainLayout>
-      <H1></H1>
+      <H1>Участники</H1>
+      <br />
       <div className="flex gap-5 justify-center">
         <Link
           to="/1"
-          className="flex items-center bg-white max-w-sm rounded overflow-hidden shadow-md hover:drop-shadow-xl p-5"
+          className="flex items-center bg-white max-w-sm overflow-hidden rounded-lg shadow hover:drop-shadow-xl p-5"
         >
           <img
             className="w-36 h-36 rounded-full mr-4"
