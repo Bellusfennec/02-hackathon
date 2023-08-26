@@ -11,7 +11,7 @@ const HomePage = () => {
       <br />
       <div className="flex gap-5 justify-center">
         {partners.map(({ id, ...rest }) => (
-          <Card key={id} {...rest} />
+          <Card key={id} id={id} {...rest} />
         ))}
       </div>
     </MainLayout>
