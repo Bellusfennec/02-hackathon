@@ -3,7 +3,7 @@ import AppRoutes from "./routes";
 
 function App() {
   return (
-    <div className="bg-gray-50 dark:bg-gray-300">
+    <div className="bg-gray-100 ">
       <AppLoader>
         <AppRoutes />
       </AppLoader>
