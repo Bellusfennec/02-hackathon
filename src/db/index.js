@@ -47,7 +47,11 @@ const db = {
           lightColor: "#B9C2FC"
         }
       ],
-      portfolio: ["/images/1.png", "/images/2.png", "/images/3.png"],
+      portfolio: [
+        "/02-hackathon/images/1.png",
+        "/02-hackathon/images/2.png",
+        "/02-hackathon/images/3.png"
+      ],
       reviews: [
         {
           reviewId: 23,
