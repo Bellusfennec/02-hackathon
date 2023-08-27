@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 
 function paginate(items, pageSize, pageNumber) {
   return [...items].splice((pageNumber - 1) * pageSize, pageSize);
-};
+}
 
 const Reviews = ({ reviews }) => {
   const [currentPageReview, setCurrentPageReview] = useState(1);
@@ -16,7 +16,7 @@ const Reviews = ({ reviews }) => {
     { field: "rating", text: "По рейтингу" },
     { field: "date", text: "По дате" }
   ];
-  const reviewOnPage = 5;
+  const reviewOnPage = 3;
   const handleSortReviews = (value) => {
     setSortReviewBy(value);
     setCurrentPageReview(1);
