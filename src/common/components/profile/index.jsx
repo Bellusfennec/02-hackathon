@@ -30,7 +30,7 @@ const Profile = (props) => {
       <div className="flex flex-col min-[480px]:flex-row">
         <img
           className="object-cover w-full rounded-lg h-96 min-[480px]:h-auto min-[480px]:w-40 sm:w-48"
-          src={`/images/${image}`}
+          src={`/02-hackathon/images/${image}`}
           alt={`Фото ${firstName}`}
         />
         <div className="flex flex-col justify-between min-[480px]:justify-center pt-5 min-[480px]:pl-5 min-[480px]:pt-0">
