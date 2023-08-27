@@ -50,9 +50,9 @@ const db = {
       id: 3,
       firstName: "Алмаз",
       lastName: "Кубакаев",
-      age: 18,
+      age: 51,
       image: "90685957.jpeg",
-      info: "О себе (2-3 предложения)",
+      info: "Живу в Бишкеке. Люблю читать книги. Нравится отдых на природе.",
       position: { name: "Frontend Developer", color: "indigo" },
       socials: [
         { id: 1, name: "GitHub", link: "https://github.com/Almaz2607" },
