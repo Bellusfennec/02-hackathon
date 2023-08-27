@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
 
-const NavbarLink = ({ children, to }) => {
+const NavbarLink = (props) => {
+  const { children, to, className } = props;
+
   return (
     <Link
       to={to}
-      className="inline-block p-2 font-medium text-gray-600 hover:bg-gray-50 dark:text-gray-500 "
+      className={
+        "inline-block p-5 font-medium text-gray-600 hover:bg-gray-50" +
+        (className ? " " + className : "")
+      }
     >
       {children}
     </Link>

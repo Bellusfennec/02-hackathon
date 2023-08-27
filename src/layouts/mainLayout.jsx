@@ -12,10 +12,10 @@ const MainLayout = ({ children }) => {
           <BreadCrumbs />
         </Container>
       </header>
-      <main className="grow my-10 p-4">
+      <main className="grow my-5 sm:px-5 lg:px-0">
         <Container>{children}</Container>
       </main>
-      <footer className="shrink-0 bg-white p-4">
+      <footer className="shrink-0 bg-white p-5">
         <Container>
           <div className="flex items-center justify-center">
             <Link
