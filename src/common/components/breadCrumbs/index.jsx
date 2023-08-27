@@ -2,11 +2,18 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const BreadCrumbs = () => {
-  const pathName = { favorites: "Партнер", id: "Избранное" };
-  const location = useLocation();
-  const crumbs = location.pathname.split("/").filter((crumb) => crumb !== "");
+  const pathName = {
+    home: "Главная страница",
+    favorites: "Избранное",
+    id: "Профиль партнёра"
+  };
+  const initialCrumbs = ["home"];
 
-  if (crumbs.length === 0) return;
+  const location = useLocation();
+  const crumbsCrop = location.pathname
+    .split("/")
+    .filter((crumb) => crumb !== "");
+  const crumbs = initialCrumbs.concat(crumbsCrop);
   const currentLink = [];
 
   function isLast(index) {
@@ -14,7 +21,7 @@ const BreadCrumbs = () => {
   }
 
   return (
-    <nav className="block bg-indigo-100 py-2 px-1 my-1 [&>*]:inline-block">
+    <nav className="block py-3 [&>*]:inline-block ">
       {crumbs.map((crumb, index) => {
         const disabled = isLast(index) ? "hover:" : "";
         currentLink.push(`/${crumb}`);
@@ -27,12 +34,12 @@ const BreadCrumbs = () => {
             {!disabled ? (
               <Link
                 to={currentLink.join("")}
-                className="hover:underline underline-offset-2 mx-1 text-orange-600 decoration-blue-500"
+                className="underline-offset-3 mr-1 text-gray-600 hover:underline text-sm"
               >
                 {pathName[crumb]}
               </Link>
             ) : (
-              <p className="text-orange-300 mx-1">{pathName[crumb]}</p>
+              <p className="mx-1 text-sm">{pathName[crumb] || pathName.id}</p>
             )}
           </div>
         );

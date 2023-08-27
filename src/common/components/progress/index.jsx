@@ -1,7 +1,15 @@
-import React, { useRef } from 'react';
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
 
-const Progress = ({ percent, name, type, size, color, colorFill, duration }) => {
+const Progress = ({
+  percent,
+  name,
+  type,
+  size,
+  color,
+  colorFill,
+  duration
+}) => {
   const progressElem = useRef(null);
   const progressText = useRef(null);
   if (typeof percent !== "number") percent = 0;
@@ -9,27 +17,33 @@ const Progress = ({ percent, name, type, size, color, colorFill, duration }) => 
     let currentProgress = 0;
     const timer = setInterval(() => {
       if (progressElem.current) {
-        if (type === "circle") progressElem.current.style.background = `conic-gradient(${colorFill} ${currentProgress * 3.6}deg, ${color} ${currentProgress * 3.6}deg)`;
-        else progressElem.current.style.width = `${currentProgress}%`;
+        if (type === "circle") {
+          progressElem.current.style.background = `conic-gradient(${colorFill} ${
+            currentProgress * 3.6
+          }deg, ${color} ${currentProgress * 3.6}deg)`;
+        } else progressElem.current.style.width = `${currentProgress}%`;
         progressText.current.textContent = `${currentProgress}%`;
         currentProgress++;
         if (currentProgress > percent) {
           clearInterval(timer);
         }
       }
-    }, duration/100);
-  }
+    }, duration / 100);
+  };
   const renderProgress = () => {
     if (type === "circle") {
       const sizes = {
-          sm: "w-16 h-16 text-sm",
-          md: "w-28 h-28 text-base",
-          lg: "w-40 h-40 text-xl"
-      }
+        sm: "w-16 h-16 text-sm",
+        md: "w-28 h-28 text-base",
+        lg: "w-40 h-40 text-xl"
+      };
       progressAnimation();
       return (
         <div
-          className={"bg-gray-300 rounded-full overflow-hidden relative flex items-center justify-center " + sizes[size]}
+          className={
+            "bg-gray-300 rounded-full overflow-hidden relative flex items-center justify-center " +
+            sizes[size]
+          }
           style={{
             width: `${size}px`,
             height: `${size}px`
@@ -38,25 +52,33 @@ const Progress = ({ percent, name, type, size, color, colorFill, duration }) => 
           <div
             ref={progressElem}
             className="w-full h-full"
-               style={{
-                 background: `conic-gradient(${colorFill} ${percent * 3.6}deg, ${color} ${percent * 3.6}deg)`
-               }}></div>
+            style={{
+              background: `conic-gradient(${colorFill} ${
+                percent * 3.6
+              }deg, ${color} ${percent * 3.6}deg)`
+            }}
+          ></div>
           <span
             ref={progressText}
             className="absolute rounded-full flex justify-center items-center w-[70%] h-[70%] bg-white"
-          >{percent + "%"}</span>
+          >
+            {percent + "%"}
+          </span>
         </div>
       );
     }
     const sizes = {
-        sm: "h-6 text-xs rounded",
-        md: "h-8 text-sm rounded-md",
-        lg: "h-10 text-base rounded-lg"
-    }
+      sm: "h-6 text-xs rounded",
+      md: "h-8 text-sm rounded-md",
+      lg: "h-10 text-base rounded-lg"
+    };
     progressAnimation();
     return (
       <div
-        className={"w-full relative flex items-center justify-center overflow-hidden " + sizes[size]}
+        className={
+          "w-full relative flex items-center justify-center overflow-hidden " +
+          sizes[size]
+        }
         style={{
           background: color
         }}
@@ -69,14 +91,14 @@ const Progress = ({ percent, name, type, size, color, colorFill, duration }) => 
             background: colorFill
           }}
         ></div>
-        <span
-          ref={progressText}
-          className="absolute">{percent + "%"}</span>
+        <span ref={progressText} className="absolute">
+          {percent + "%"}
+        </span>
       </div>
     );
-  }
+  };
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <h3 className="text-2xl font-medium mb-3">{name}</h3>
       {renderProgress()}
     </div>

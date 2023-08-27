@@ -1,3 +1,4 @@
+import React from "react";
 import MainLayout from "../layouts/mainLayout";
 import H1 from "../common/components/h1";
 import db from "../db";

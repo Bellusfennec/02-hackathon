@@ -46,7 +46,7 @@ const FavoritesProvider = ({ children }) => {
         isLoading,
         setFavoriteById,
         getFavoriteById,
-        removeFavoriteById,
+        removeFavoriteById
       }}
     >
       {children}
@@ -57,8 +57,8 @@ const FavoritesProvider = ({ children }) => {
 FavoritesProvider.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
+    PropTypes.node
+  ])
 };
 
 export default FavoritesProvider;

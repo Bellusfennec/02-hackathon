@@ -1,18 +1,23 @@
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import { useState } from "react";
+=======
+>>>>>>> 2861a46652d6445eb0414953aa1783c180a6eb31
 import { useFavorites } from "../../../hooks/useFavorites";
 import Badge from "../badge";
-import Name from "./name";
-import Age from "./age";
-import Info from "./info";
-import Favorite from "./favorite";
 import Border from "../contaner/border";
+import Age from "./age";
+import Favorite from "./favorite";
+import Info from "./info";
+import Name from "./name";
+import PropTypes from "prop-types";
 
 const Card = (props) => {
   const { id, image, firstName, lastName, position, age, info } = props;
   const { setFavoriteById, getFavoriteById, removeFavoriteById } =
     useFavorites();
-  const [isFavorite, setFavorite] = useState(getFavoriteById(id));
+  const [isFavorite, setFavorite] = useState(false);
 
   const handlerSetFavorite = (id) => {
     setFavoriteById(id);
@@ -23,16 +28,21 @@ const Card = (props) => {
     setFavorite(false);
   };
 
+  useEffect(() => {
+    const favorite = getFavoriteById(id);
+    if (favorite) setFavorite(favorite);
+  }, []);
+
   return (
     <Border className="relative flex items-center p-5 w-full md:w-80 flex-col md:flex-col sm:flex-row hover:drop-shadow-xl">
-      <Link to={`/${id}`} className="flex">
+      <Link to={`/${id}`} className="">
         <img
-          className="w-32 h-32 rounded-full mr-4"
+          className="w-32 h-32 rounded-full mr-4 grow"
           src={`/images/${image}`}
           alt={`Фото ${firstName}`}
         />
       </Link>
-      <div className="pt-5 self-start">
+      <div className="pt-5 self-start sm:pt-0 sm:pl-5 md:pl-0 md:pt-5">
         <Badge color={position.color} size="sm">
           {position.name}
         </Badge>
@@ -52,4 +62,13 @@ const Card = (props) => {
   );
 };
 
+Card.propTypes = {
+  id: PropTypes.number,
+  image: PropTypes.string,
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
+  position: PropTypes.object,
+  age: PropTypes.number,
+  info: PropTypes.string
+};
 export default Card;

@@ -1,7 +1,9 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../common/components/navbar";
 import Container from "../common/components/contaner";
 import BreadCrumbs from "../common/components/breadCrumbs";
+import PropTypes from "prop-types";
 
 const MainLayout = ({ children }) => {
   return (
@@ -9,11 +11,13 @@ const MainLayout = ({ children }) => {
       <header className="bg-white">
         <Container>
           <Navbar />
-          <BreadCrumbs />
         </Container>
       </header>
-      <main className="grow my-5 sm:px-5 lg:px-0">
-        <Container>{children}</Container>
+      <main className="grow ">
+        <Container>
+          <BreadCrumbs />
+          <div className="my-5">{children}</div>
+        </Container>
       </main>
       <footer className="shrink-0 bg-white p-5">
         <Container>
@@ -46,6 +50,13 @@ const MainLayout = ({ children }) => {
       </footer>
     </div>
   );
+};
+
+MainLayout.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ])
 };
 
 export default MainLayout;

@@ -1,3 +1,4 @@
+import React from "react";
 import AppLoader from "./common/hoc/appLoader";
 import FavoritesProvider from "./hooks/useFavorites";
 import AppRoutes from "./routes";
