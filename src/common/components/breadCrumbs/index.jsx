@@ -2,11 +2,14 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const BreadCrumbs = () => {
-  const pathName = { favorites: "Партнер", id: "Избранное" };
-  const location = useLocation();
-  const crumbs = location.pathname.split("/").filter((crumb) => crumb !== "");
+  const pathName = { home: "Главная", favorites: "Избранное", id: "Партнер" };
+  const initialCrumbs = ["home"];
 
-  if (crumbs.length === 0) return;
+  const location = useLocation();
+  const crumbsCrop = location.pathname
+    .split("/")
+    .filter((crumb) => crumb !== "");
+  const crumbs = initialCrumbs.concat(crumbsCrop);
   const currentLink = [];
 
   function isLast(index) {
@@ -14,7 +17,7 @@ const BreadCrumbs = () => {
   }
 
   return (
-    <nav className="block bg-indigo-100 py-2 px-1 my-1 [&>*]:inline-block">
+    <nav className="block bg-indigo-100 p-2 my-1 [&>*]:inline-block">
       {crumbs.map((crumb, index) => {
         const disabled = isLast(index) ? "hover:" : "";
         currentLink.push(`/${crumb}`);
@@ -32,7 +35,9 @@ const BreadCrumbs = () => {
                 {pathName[crumb]}
               </Link>
             ) : (
-              <p className="text-orange-300 mx-1">{pathName[crumb]}</p>
+              <p className="text-orange-300 mx-1">
+                {pathName[crumb] || pathName.id}
+              </p>
             )}
           </div>
         );
