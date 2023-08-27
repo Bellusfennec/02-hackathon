@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Border from "../contaner/border";
-import Age from "./age";
-import Name from "./name";
+import Age from "../card/age";
+import Name from "../card/name";
 import Badge from "../badge";
-import Info from "./info";
-import SocialList from "./socialsList";
-import SkillsList from "./skillsList";
+import Info from "../card/info";
+import SocialList from "../profile/socialsList";
+import SkillsList from "../profile/skillsList";
 import ImpactsList from "./impactsList";
 import Slider from "../slider";
 
