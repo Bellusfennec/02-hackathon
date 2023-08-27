@@ -3,62 +3,50 @@ import Progress from "../common/components/progress";
 import db from "../db";
 import { Link, Navigate, useParams } from "react-router-dom";
 import H1 from "../common/components/h1";
+import Name from "../common/components/card/name";
+import Age from "../common/components/card/age";
+import Badge from "../common/components/badge";
+import SocialList from "../common/components/card/socialsList";
+import ImpactsList from "../common/components/card/impactsList";
+import SkillsList from "../common/components/card/skillsList";
+import Info from "../common/components/card/info";
+import Border from "../common/components/contaner/border";
 
 const PartnerProfile = () => {
   const { id } = useParams();
   const { partners } = db;
   const partner = partners.find((p) => p.id === Number(id));
   if (!partner) return <Navigate to="/" />;
-  const { firstName, lastName, age, image, info, impacts, socials } = partner;
+
+  const { firstName, lastName, age, image, info } = partner;
+  const { impacts, socials, position, skills } = partner;
   return (
     <MainLayout>
-      <H1>Участник</H1>
+      <H1>Партнёр</H1>
       <br />
-      <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row">
-        <img
-          className="self-start object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-tl-lg md:rounded-br-lg"
-          src={`/images/${image}`}
-          alt={`Фото ${firstName}`}
-        />
-        <div className="flex flex-col justify-between p-5 leading-normal">
-          <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-            {firstName} {lastName}
-          </h2>
-          <h3 className="mb-2 text-lg font-bold tracking-tight text-gray-700">
-            {age} лет
-          </h3>
-          <p className="mb-3 font-normal text-gray-700">{info}</p>
-          <div className="flex gap-5">
-            {socials.map(({ id, name, link }) => (
-              <Link key={id} to={link}>
-                {name}
-              </Link>
-            ))}
-          </div>
-          <br />
-          <p>Реализовал в данном проекте:</p>
-          <ul className="list-disc">
-            {impacts.map(({ id, name }) => (
-              <li key={id} className="ml-5">
-                {name}
-              </li>
-            ))}
-          </ul>
-          <br />
-          <div className="flex justify-around gap-5">
-            {partner.skills.map(({ id, name, percent }) => (
-              <Progress
-                key={id}
-                percent={percent}
-                name={name}
-                type="circle"
-                size="sm"
-                duration={2000}
-              />
-            ))}
+      <Border className="p-5">
+        <div className="flex flex-col min-[480px]:flex-row">
+          <img
+            className="object-cover w-full rounded-lg h-96 min-[480px]:h-auto min-[480px]:w-40 sm:w-48"
+            src={`/images/${image}`}
+            alt={`Фото ${firstName}`}
+          />
+          <div className="flex flex-col justify-between min-[480px]:justify-center pt-5 min-[480px]:pl-5">
+            <Name firstName={firstName} lastName={lastName} position={position}>
+              <Badge color={position.color} size="sm">
+                {position.name}
+              </Badge>
+            </Name>
+            <Age age={age} />
+            <Info info={info} />
+            <SocialList socials={socials} />
           </div>
         </div>
-      </div>
+        <br />
+        <SkillsList skills={skills} />
+        <br />
+        <ImpactsList impacts={impacts} />
+      </Border>
     </MainLayout>
   );
 };
