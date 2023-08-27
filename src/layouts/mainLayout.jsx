@@ -11,6 +11,8 @@ const MainLayout = ({ children }) => {
       <header className="bg-white">
         <Container>
           <Navbar />
+        </Container>
+        <Container>
           <BreadCrumbs />
         </Container>
       </header>
