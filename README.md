@@ -1,9 +1,5 @@
 # Hackathon 2 (React team 2)
 
-Реализовано:
-
-- Пока ничего.
-
 ## Authors
 
 - [@bellusfennec](https://www.github.com/bellusfennec) - Team Leader.
