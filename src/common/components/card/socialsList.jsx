@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import React from "react";
+import PropTypes from "prop-types";
 
 const SocialList = (props) => {
   const { socials } = props;
@@ -13,5 +15,7 @@ const SocialList = (props) => {
     </div>
   );
 };
-
+SocialList.propTypes = {
+  socials: PropTypes.array
+};
 export default SocialList;

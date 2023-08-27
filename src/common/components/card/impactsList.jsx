@@ -1,3 +1,5 @@
+import React from "react";
+import PropTypes from "prop-types";
 import Badge from "../badge";
 
 const ImpactsList = (props) => {
@@ -15,5 +17,7 @@ const ImpactsList = (props) => {
     </>
   );
 };
-
+ImpactsList.propTypes = {
+  impacts: PropTypes.array
+};
 export default ImpactsList;

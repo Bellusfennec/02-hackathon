@@ -1,3 +1,6 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 const Name = (props) => {
   const { firstName, lastName, children } = props;
   return (
@@ -6,5 +9,12 @@ const Name = (props) => {
     </h2>
   );
 };
-
+Name.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]),
+  firstName: PropTypes.string,
+  lastName: PropTypes.string
+};
 export default Name;

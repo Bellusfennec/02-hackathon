@@ -1,3 +1,6 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 const Button = (props) => {
   const { children, onClick } = props;
   const type = props.type ? props.type : "submit";
@@ -18,5 +21,19 @@ const Button = (props) => {
     </button>
   );
 };
-
+Button.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]),
+  onClick: PropTypes.func,
+  type: PropTypes.string,
+  rounded: PropTypes.string,
+  bg: PropTypes.string,
+  color: PropTypes.string,
+  size: PropTypes.string,
+  py: PropTypes.string,
+  px: PropTypes.string,
+  ring: PropTypes.string
+};
 export default Button;

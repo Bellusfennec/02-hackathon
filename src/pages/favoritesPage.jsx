@@ -3,6 +3,7 @@ import H1 from "../common/components/h1";
 import db from "../db";
 import { useFavorites } from "../hooks/useFavorites";
 import MainLayout from "../layouts/mainLayout";
+import React from "react";
 
 const FavoritesPage = () => {
   const { partners } = db;

@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+import React from "react";
 import PropTypes from "prop-types";
 import Loading from "../components/loading";
 import { useFavorites } from "../../hooks/useFavorites";
@@ -15,8 +15,8 @@ const AppLoader = ({ children }) => {
 AppLoader.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
+    PropTypes.node
+  ])
 };
 
 export default AppLoader;

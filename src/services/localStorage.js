@@ -13,6 +13,6 @@ function removeFavorites() {
 const localStorageService = {
   setFavorites,
   getFavorites,
-  removeFavorites,
+  removeFavorites
 };
 export default localStorageService;
