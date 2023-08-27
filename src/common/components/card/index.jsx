@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Button from "../button";
 import { useState } from "react";
 import { useFavorites } from "../../../hooks/useFavorites";
 import Badge from "../badge";

@@ -1,7 +1,6 @@
 import MainLayout from "../layouts/mainLayout";
-import Progress from "../common/components/progress";
 import db from "../db";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import H1 from "../common/components/h1";
 import Name from "../common/components/card/name";
 import Age from "../common/components/card/age";
