@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Navbar from "../common/components/navbar/navbar";
-import Container from "../common/components/wrapper/contaner";
+import Navbar from "../common/components/navbar";
+import Container from "../common/components/contaner";
 import BreadCrumbs from "../common/components/breadCrumbs";
 
 const MainLayout = ({ children }) => {

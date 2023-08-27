@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import MainLayout from "./mainLayout";
+import MainLayout from "../layouts/mainLayout";
 
 const Error404Page = () => {
   return (
