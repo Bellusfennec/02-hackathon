@@ -98,7 +98,7 @@ const Progress = ({
     );
   };
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <h3 className="text-2xl font-medium mb-3">{name}</h3>
       {renderProgress()}
     </div>

@@ -28,18 +28,17 @@ const Card = (props) => {
     const favorite = getFavoriteById(id);
     if (favorite) setFavorite(favorite);
   }, []);
-  console.log(isFavorite);
 
   return (
     <Border className="relative flex items-center p-5 w-full md:w-80 flex-col md:flex-col sm:flex-row hover:drop-shadow-xl">
-      <Link to={`/${id}`} className="flex">
+      <Link to={`/${id}`} className="">
         <img
-          className="w-32 h-32 rounded-full mr-4"
+          className="w-32 h-32 rounded-full mr-4 grow"
           src={`/images/${image}`}
           alt={`Фото ${firstName}`}
         />
       </Link>
-      <div className="pt-5 self-start">
+      <div className="pt-5 self-start sm:pt-0 sm:pl-5 md:pl-0 md:pt-5">
         <Badge color={position.color} size="sm">
           {position.name}
         </Badge>

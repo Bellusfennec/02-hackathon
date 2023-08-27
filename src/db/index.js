@@ -23,11 +23,29 @@ const db = {
         { id: 8, name: "badge" }
       ],
       skills: [
-        { id: 1, name: "CSS", percent: 85, color: "red" },
-        { id: 2, name: "Javascript", percent: 70, color: "yellow" },
-        { id: 3, name: "React", percent: 75, color: "blue" }
+        {
+          id: 1,
+          name: "CSS",
+          percent: 85,
+          darkColor: "#7309AA",
+          lightColor: "#E4B3FC"
+        },
+        {
+          id: 2,
+          name: "Javascript",
+          percent: 75,
+          darkColor: "#FFC602FF",
+          lightColor: "#FDF1C1"
+        },
+        {
+          id: 3,
+          name: "React",
+          percent: 70,
+          darkColor: "#0A67A3",
+          lightColor: "#B9C2FC"
+        }
       ],
-      portfolio: []
+      portfolio: ["/images/1.png", "/images/2.png", "/images/3.png"]
     },
     {
       id: 2,
@@ -40,11 +58,32 @@ const db = {
       socials: [
         { id: 1, name: "GitHub", link: "https://github.com/Andrey999K" }
       ],
-      impacts: [{ id: 1, name: "Добавил компонент progress." }],
+      impacts: [
+        { id: 1, name: "progress" },
+        { id: 2, name: "slider" }
+      ],
       skills: [
-        { id: 1, name: "CSS", percent: 85, color: "" },
-        { id: 2, name: "Javascript", percent: 79, color: "" },
-        { id: 3, name: "React", percent: 71, color: "" }
+        {
+          id: 1,
+          name: "CSS",
+          percent: 90,
+          darkColor: "#7309AA",
+          lightColor: "#E4B3FC"
+        },
+        {
+          id: 2,
+          name: "Javascript",
+          percent: 80,
+          darkColor: "#FFC602FF",
+          lightColor: "#FDF1C1"
+        },
+        {
+          id: 3,
+          name: "React",
+          percent: 70,
+          darkColor: "#0A67A3",
+          lightColor: "#B9C2FC"
+        }
       ],
       portfolio: [
         "https://andrey999k.github.io/Portfolio/build/images/wild-acation-1440.webp",
@@ -66,11 +105,29 @@ const db = {
       socials: [
         { id: 1, name: "GitHub", link: "https://github.com/Almaz2607" }
       ],
-      impacts: [{ id: 1, name: "Добавил компонент breadCrumbs." }],
+      impacts: [{ id: 1, name: "breadCrumbs" }],
       skills: [
-        { id: 1, name: "CSS", percent: 84, color: "" },
-        { id: 2, name: "Javascript", percent: 77, color: "" },
-        { id: 3, name: "React", percent: 75, color: "" }
+        {
+          id: 1,
+          name: "CSS",
+          percent: 70,
+          darkColor: "#7309AA",
+          lightColor: "#E4B3FC"
+        },
+        {
+          id: 2,
+          name: "Javascript",
+          percent: 80,
+          darkColor: "#FFC602FF",
+          lightColor: "#FDF1C1"
+        },
+        {
+          id: 3,
+          name: "React",
+          percent: 80,
+          darkColor: "#0A67A3",
+          lightColor: "#B9C2FC"
+        }
       ],
       portfolio: []
     }

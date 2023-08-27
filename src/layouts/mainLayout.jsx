@@ -12,12 +12,12 @@ const MainLayout = ({ children }) => {
         <Container>
           <Navbar />
         </Container>
+      </header>
+      <main className="grow ">
         <Container>
           <BreadCrumbs />
+          <div className="my-5">{children}</div>
         </Container>
-      </header>
-      <main className="grow my-5">
-        <Container>{children}</Container>
       </main>
       <footer className="shrink-0 bg-white p-5">
         <Container>

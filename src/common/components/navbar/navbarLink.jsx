@@ -9,7 +9,7 @@ const NavbarLink = (props) => {
     <Link
       to={to}
       className={
-        "inline-block py-5 font-medium text-gray-600 hover:underline" +
+        "inline-block py-5 font-medium text-gray-600 hover:underline underline-offset-3" +
         (className ? " " + className : "")
       }
     >
