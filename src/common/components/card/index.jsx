@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
+import { useState } from "react";
+=======
+>>>>>>> 2861a46652d6445eb0414953aa1783c180a6eb31
 import { useFavorites } from "../../../hooks/useFavorites";
 import Badge from "../badge";
 import Border from "../contaner/border";
