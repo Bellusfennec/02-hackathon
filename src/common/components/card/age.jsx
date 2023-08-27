@@ -1,3 +1,6 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 const Age = (props) => {
   const { age } = props;
 
@@ -7,5 +10,7 @@ const Age = (props) => {
     </h3>
   );
 };
-
+Age.propTypes = {
+  age: PropTypes.number
+};
 export default Age;

@@ -1,3 +1,5 @@
+import React from "react";
+import PropTypes from "prop-types";
 const Border = (props) => {
   const { children, className } = props;
   return (
@@ -10,6 +12,14 @@ const Border = (props) => {
       {children}
     </div>
   );
+};
+
+Border.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]),
+  className: PropTypes.string
 };
 
 export default Border;

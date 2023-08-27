@@ -1,4 +1,6 @@
 import Button from "../button";
+import React from "react";
+import PropTypes from "prop-types";
 
 const Favorite = (props) => {
   const { id, isFavorite, onRemove, onSet } = props;
@@ -58,5 +60,10 @@ const Favorite = (props) => {
     </div>
   );
 };
-
+Favorite.propTypes = {
+  isFavorite: PropTypes.bool,
+  onRemove: PropTypes.func,
+  onSet: PropTypes.func,
+  id: PropTypes.number
+};
 export default Favorite;

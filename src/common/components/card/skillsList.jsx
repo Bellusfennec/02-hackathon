@@ -1,4 +1,6 @@
 import Progress from "../progress";
+import React from "react";
+import PropTypes from "prop-types";
 
 const SkillsList = (props) => {
   const { skills } = props;
@@ -17,5 +19,7 @@ const SkillsList = (props) => {
     </div>
   );
 };
-
+SkillsList.propTypes = {
+  skills: PropTypes.array
+};
 export default SkillsList;
