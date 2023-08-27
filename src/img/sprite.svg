@@ -10,4 +10,10 @@
             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.43267 1.71699C-0.344094 3.49375 -0.344094 6.36391 1.43267 8.14068L19.1092 25.8172L1.43267 43.4938C-0.344094 45.2705 -0.344094 48.1407 1.43267 49.9174C3.20944 51.6942 6.0796 51.6942 7.85636 49.9174L28.7675 29.0063C30.5443 27.2295 30.5443 24.3594 28.7675 22.5826L7.85636 1.67143C6.12515 -0.0597795 3.20944 -0.0597784 1.43267 1.71699Z" fill="currentColor"/>
         </g>
     </symbol>
+    <symbol id="star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star">
+        <g>
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </g>
+    </symbol>
 </svg>

@@ -10,6 +10,7 @@ import ImpactsList from "../common/components/card/impactsList";
 import SkillsList from "../common/components/card/skillsList";
 import Info from "../common/components/card/info";
 import Border from "../common/components/contaner/border";
+import Review from "../common/components/reviews/review";
 
 const PartnerProfile = () => {
   const { id } = useParams();
@@ -46,6 +47,7 @@ const PartnerProfile = () => {
         <br />
         <ImpactsList impacts={impacts} />
       </Border>
+      <Review data={{ reviewId: 1, name: "Андрей Кутузов", rating: 5, text: "Хорошая работа Олег) Ой, т.е. Андрей.", date: "27.08.2023" }} />
     </MainLayout>
   );
 };
