@@ -10,10 +10,21 @@ import SkillsList from "../profile/skillsList";
 import ImpactsList from "./impactsList";
 import Slider from "../slider";
 import Reviews from "../reviews";
+import Icon from "../icon";
 
 const Profile = (props) => {
   const { firstName, lastName, age, image, info } = props;
   const { impacts, socials, position, skills, portfolio, reviews } = props;
+
+  function getRating() {
+    const size = reviews.length;
+    let sum = 0;
+    reviews.forEach((r) => {
+      sum += r.rating;
+    });
+    return sum / size;
+  }
+
   return (
     <Border className="p-5">
       <div className="flex flex-col min-[480px]:flex-row">
@@ -26,6 +37,15 @@ const Profile = (props) => {
           <Name firstName={firstName} lastName={lastName} position={position}>
             <Badge color={position.color} size="sm">
               {position.name}
+            </Badge>
+            <Badge color="green" size="sm">
+              <div className="flex items-center gap-1">
+                <Icon
+                  name="star"
+                  className="text-[#FFC602FF] w-[16px] h-[16px]"
+                />
+                <span>{getRating().toFixed(1)}</span>
+              </div>
             </Badge>
           </Name>
           <Age age={age} />

@@ -25,7 +25,7 @@ const Badge = (props) => {
   return (
     <span
       className={
-        `${colorVariants[color]} text-${size} ${sizeVariants[color]} font-medium mr-2 px-2.5 py-0.5 rounded whitespace-nowrap` +
+        `${colorVariants[color]} ${sizeVariants[size]} font-medium mr-2 px-2.5 py-0.5 rounded whitespace-nowrap` +
         (className ? " " + className : "")
       }
     >
