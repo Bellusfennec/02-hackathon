@@ -1,12 +1,15 @@
 import AppLoader from "./common/hoc/appLoader";
+import FavoritesProvider from "./hooks/useFavorites";
 import AppRoutes from "./routes";
 
 function App() {
   return (
     <div className="bg-gray-100 ">
-      <AppLoader>
-        <AppRoutes />
-      </AppLoader>
+      <FavoritesProvider>
+        <AppLoader>
+          <AppRoutes />
+        </AppLoader>
+      </FavoritesProvider>
     </div>
   );
 }

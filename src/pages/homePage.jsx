@@ -1,5 +1,5 @@
-import MainLayout from "./mainLayout";
-import H1 from "../common/components/text/h1";
+import MainLayout from "../layouts/mainLayout";
+import H1 from "../common/components/h1";
 import db from "../db";
 import Card from "../common/components/card";
 

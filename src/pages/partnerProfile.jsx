@@ -1,8 +1,8 @@
-import MainLayout from "./mainLayout";
+import MainLayout from "../layouts/mainLayout";
 import Progress from "../common/components/progress";
 import db from "../db";
 import { Link, Navigate, useParams } from "react-router-dom";
-import H1 from "../common/components/text/h1";
+import H1 from "../common/components/h1";
 
 const PartnerProfile = () => {
   const { id } = useParams();
@@ -16,7 +16,7 @@ const PartnerProfile = () => {
       <br />
       <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row">
         <img
-          className="self-start object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-tl-lg"
+          className="self-start object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-tl-lg md:rounded-br-lg"
           src={`/images/${image}`}
           alt={`Фото ${firstName}`}
         />

@@ -9,8 +9,8 @@ const db = {
       info: "Живу в Казани. Люблю компьютерные игры. Иногда бегаю.",
       position: "Team Leader",
       socials: [
-        { id: 1, name: "GitHub", link: "" },
-        { id: 2, name: "VK", link: "" },
+        { id: 1, name: "GitHub", link: "https://vk.com/bellusfennec" },
+        { id: 2, name: "VK", link: "https://github.com/Bellusfennec" },
       ],
       impacts: [
         { id: 1, name: "Создал проект." },
@@ -31,8 +31,7 @@ const db = {
       info: "О себе (2-3 предложения)",
       position: "Frontend Development",
       socials: [
-        { id: 1, name: "GitHub", link: "" },
-        { id: 2, name: "VK", link: "" },
+        { id: 1, name: "GitHub", link: "https://github.com/Andrey999K" },
       ],
       impacts: [{ id: 1, name: "Добавил компонент progress." }],
       skills: [
@@ -50,8 +49,7 @@ const db = {
       info: "О себе (2-3 предложения)",
       position: "Frontend Development",
       socials: [
-        { id: 1, name: "GitHub", link: "" },
-        { id: 2, name: "VK", link: "" },
+        { id: 1, name: "GitHub", link: "https://github.com/Almaz2607" },
       ],
       impacts: [{ id: 1, name: "Добавил компонент breadCrumbs." }],
       skills: [
