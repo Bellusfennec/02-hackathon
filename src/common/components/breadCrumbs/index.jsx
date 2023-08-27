@@ -5,7 +5,7 @@ const BreadCrumbs = () => {
   const pathName = {
     home: "Главная страница",
     favorites: "Избранное",
-    id: "Партнёр"
+    id: "Профиль партнёра"
   };
   const initialCrumbs = ["home"];
 

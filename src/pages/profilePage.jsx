@@ -14,7 +14,7 @@ const ProfilePage = () => {
 
   return (
     <MainLayout>
-      <H1>Партнёр</H1>
+      <H1>Профиль партнёра</H1>
       <br />
       <Profile {...partner} />
     </MainLayout>
