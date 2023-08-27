@@ -9,10 +9,11 @@ import SocialList from "../profile/socialsList";
 import SkillsList from "../profile/skillsList";
 import ImpactsList from "./impactsList";
 import Slider from "../slider";
+import Reviews from "../reviews";
 
 const Profile = (props) => {
   const { firstName, lastName, age, image, info } = props;
-  const { impacts, socials, position, skills, portfolio } = props;
+  const { impacts, socials, position, skills, portfolio, reviews } = props;
   return (
     <Border className="p-5">
       <div className="flex flex-col min-[480px]:flex-row">
@@ -38,6 +39,8 @@ const Profile = (props) => {
       <Slider images={portfolio} duration={220} />
       <br />
       <ImpactsList impacts={impacts} />
+      <br />
+      <Reviews reviews={reviews} />
     </Border>
   );
 };
@@ -55,6 +58,7 @@ Profile.propTypes = {
   socials: PropTypes.array,
   position: PropTypes.object,
   skills: PropTypes.array,
-  portfolio: PropTypes.array
+  portfolio: PropTypes.array,
+  reviews: PropTypes.array
 };
 export default Profile;

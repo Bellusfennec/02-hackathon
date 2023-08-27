@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Review from "./review";
 import { orderBy } from "lodash";
 import Pagination from "../pagination";
@@ -11,7 +11,10 @@ function paginate(items, pageSize, pageNumber) {
 
 const Reviews = ({ reviews }) => {
   const [currentPageReview, setCurrentPageReview] = useState(1);
-  const [sortReviewBy, setSortReviewBy] = useState({ iter: "rating", order: "desc" });
+  const [sortReviewBy, setSortReviewBy] = useState({
+    iter: "rating",
+    order: "desc"
+  });
   const sortReviewsOptions = [
     { field: "rating", text: "По рейтингу" },
     { field: "date", text: "По дате" }
@@ -25,23 +28,34 @@ const Reviews = ({ reviews }) => {
     setCurrentPageReview(pageNumber);
   };
   const sortByDate = (items) => {
-    return orderBy(items, [item => {
-      const [day, month, year] = item.date.split(".");
-      return new Date(`${year}-${month}-${day}`);
-    }], [sortReviewBy.order]);
+    return orderBy(
+      items,
+      [
+        (item) => {
+          const [day, month, year] = item.date.split(".");
+          return new Date(`${year}-${month}-${day}`);
+        }
+      ],
+      [sortReviewBy.order]
+    );
   };
   let sortedReviews = reviews;
   if (sortReviewBy) {
-    sortedReviews = sortReviewBy.iter === "date"
-      ? sortByDate(reviews)
-      : orderBy(reviews, [sortReviewBy.iter], [sortReviewBy.order]);
+    sortedReviews =
+      sortReviewBy.iter === "date"
+        ? sortByDate(reviews)
+        : orderBy(reviews, [sortReviewBy.iter], [sortReviewBy.order]);
   }
   const reviewsCrop = paginate(sortedReviews, reviewOnPage, currentPageReview);
   return (
     <div className="max-w-3xl flex flex-col gap-10">
       <div className="flex justify-between">
         <h3 className="text-3xl">Отзывы {reviews.length}</h3>
-        <SortOptions onSort={handleSortReviews} selectedSort={sortReviewBy} items={sortReviewsOptions} />
+        <SortOptions
+          onSort={handleSortReviews}
+          selectedSort={sortReviewBy}
+          items={sortReviewsOptions}
+        />
         <div className="hidden md:block">
           <Pagination
             pageSize={reviewOnPage}
@@ -52,11 +66,11 @@ const Reviews = ({ reviews }) => {
         </div>
       </div>
       <ul className="flex flex-col gap-8">
-        {reviewsCrop.map(review =>
+        {reviewsCrop.map((review) => (
           <li key={review.reviewId}>
             <Review data={review} />
           </li>
-        )}
+        ))}
       </ul>
       <div className="flex justify-center md:justify-start">
         <Pagination

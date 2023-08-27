@@ -8,13 +8,19 @@ const Pagination = ({ itemsCount, pageSize, onPageChange, currentPage }) => {
   return (
     <div className="text-sm">
       <ul className="flex">
-        {pages.map(page =>
-          <li key={"page_" + page}
-              className={(page === currentPage ? "bg-gray-200 " : "") + "px-4 py-2 rounded-full hover:text-[#FFC602FF] hover:bg-[#FDF1C1]"}
-              role="button"
-              onClick={() => onPageChange(page)}
-          >{page}</li>
-        )}
+        {pages.map((page) => (
+          <li
+            key={"page_" + page}
+            className={
+              (page === currentPage ? "bg-gray-200 " : "") +
+              "px-4 py-2 rounded-full hover:text-[#FFC602FF] hover:bg-[#FDF1C1]"
+            }
+            role="button"
+            onClick={() => onPageChange(page)}
+          >
+            {page}
+          </li>
+        ))}
       </ul>
     </div>
   );
