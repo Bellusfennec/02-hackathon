@@ -15,7 +15,7 @@ const Review = ({ data }) => {
             <span>{name}</span>
             <div>
               <div className="flex items-center gap-1">
-                <Icon name="star" className="text-sky-500 w-[16px] h-[16px]" />
+                <Icon name="star" className="text-[#FFC602FF] w-[16px] h-[16px]" />
                 <span>{rating}</span>
               </div>
             </div>
