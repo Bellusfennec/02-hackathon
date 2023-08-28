@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const Icon = ({ name, className }) => (
   <svg className={className}>
-    <use xlinkHref={process.env.PUBLIC_URL + `/sprite.svg/#${name}`} />
+    <use xlinkHref={process.env.PUBLIC_URL + `/images/sprite.svg/#${name}`} />
   </svg>
 );
 
