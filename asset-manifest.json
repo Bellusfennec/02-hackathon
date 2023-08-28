@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/02-hackathon/static/css/main.8fac1323.css",
-    "main.js": "/02-hackathon/static/js/main.838ca51a.js",
+    "main.js": "/02-hackathon/static/js/main.b6799d2b.js",
     "static/media/sprite.svg": "/02-hackathon/static/media/sprite.e0e2f023d602bed1ef450c65484c66bb.svg",
     "index.html": "/02-hackathon/index.html",
     "main.8fac1323.css.map": "/02-hackathon/static/css/main.8fac1323.css.map",
-    "main.838ca51a.js.map": "/02-hackathon/static/js/main.838ca51a.js.map"
+    "main.b6799d2b.js.map": "/02-hackathon/static/js/main.b6799d2b.js.map"
   },
   "entrypoints": [
     "static/css/main.8fac1323.css",
-    "static/js/main.838ca51a.js"
+    "static/js/main.b6799d2b.js"
   ]
 }
