@@ -34,7 +34,7 @@ const Card = (props) => {
       <Link to={`/${id}`} className="">
         <img
           className="w-32 h-32 rounded-full mr-4 grow"
-          src={`/02-hackathon/images/${image}`}
+          src={process.env.PUBLIC_URL + `/images/${image}`}
           alt={`Фото ${firstName}`}
         />
       </Link>
