@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import sprite from "../../../img/sprite.svg";
+// import sprite from "../../../img/sprite.svg";
 
 const Icon = ({ name, className }) => (
   <svg className={className}>
-    <use xlinkHref={process.env.PUBLIC_URL + `${sprite}/#${name}`} />
+    <use xlinkHref={process.env.PUBLIC_URL + `/sprite.svg/#${name}`} />
   </svg>
 );
 
