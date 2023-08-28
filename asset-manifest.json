@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/02-hackathon/static/css/main.8fac1323.css",
-    "main.js": "/02-hackathon/static/js/main.db5d85da.js",
+    "main.js": "/02-hackathon/static/js/main.fce691a7.js",
     "index.html": "/02-hackathon/index.html",
     "main.8fac1323.css.map": "/02-hackathon/static/css/main.8fac1323.css.map",
-    "main.db5d85da.js.map": "/02-hackathon/static/js/main.db5d85da.js.map"
+    "main.fce691a7.js.map": "/02-hackathon/static/js/main.fce691a7.js.map"
   },
   "entrypoints": [
     "static/css/main.8fac1323.css",
-    "static/js/main.db5d85da.js"
+    "static/js/main.fce691a7.js"
   ]
 }
